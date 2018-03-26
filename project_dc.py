@@ -24,8 +24,13 @@ with open('iris.data', 'rt') as irisdata:
         # store latest petal length in the list for calculations.
         petalLengthList.append(float(splitline[0]))
         # print out details needed with the added string details to show the user the details needed
-        print("Petal Length: " + splitline[0] + " " + "Petal Width: " + splitline[1] + " " + "Sepal Length: " + splitline[2] + " "+ "Sepal Width: " + splitline[3]) 
+        print("Sepal Length: " + splitline[0] + " " + "Sepal Width: " + splitline[1] + " " + "Petal Length: " + splitline[2] + " "+ "Petal Width: " + splitline[3]) 
         count = count +1
+        plt.scatter(splitline[0], splitline[1], alpha=0.2,
+                   s=100*splitline[0], c=iris.target, cmap='viridis')
+       plt.xlabel(iris.feature_names[0])
+       plt.ylabel(iris.feature_names[1]);
+        
 # close the file       
 irisdata.close()
 print(count)
@@ -40,3 +45,5 @@ print("Mode: " + str(mode(petalLengthList)))
 print("Standard Deviation: " + str(pstdev(petalLengthList)))
 print("Max: " + str(max(petalLengthList)))
 print("Min: " + str(min(petalLengthList)))
+
+
