@@ -21,6 +21,7 @@ with open('iris.data', 'rt') as irisdata:
         # split the line and store it
         splitline = line.split(",")
         totalPetalLength += float(splitline[0])
+        # store latest petal length in the list for calculations.
         petalLengthList.append(float(splitline[0]))
         # print out details needed with the added string details to show the user the details needed
         print("Petal Length: " + splitline[0] + " " + "Petal Width: " + splitline[1] + " " + "Sepal Length: " + splitline[2] + " "+ "Sepal Width: " + splitline[3]) 
@@ -28,6 +29,7 @@ with open('iris.data', 'rt') as irisdata:
 # close the file       
 irisdata.close()
 print(count)
+# using inbuilt python function to calcluate median etc. 
 print("Mean: " + str(totalPetalLength/count))
 print("Median: " + str(median(petalLengthList)))
 print("Mode: " + str(mode(petalLengthList)))
