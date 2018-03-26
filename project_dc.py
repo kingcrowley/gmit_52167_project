@@ -5,6 +5,7 @@
 
 # open file iris.data in read mode (for text which is the default anyway)
 from statistics import median, mode, pstdev, mean
+from matplotlib import pyplot as plt
 petalLengthList = []
 totalPetalLength = 0
 totalPetalWidth = 0
@@ -24,7 +25,7 @@ with open('iris.data', 'rt') as irisdata:
         # store latest petal length in the list for calculations.
         petalLengthList.append(float(splitline[0]))
         # print out details needed with the added string details to show the user the details needed
-        print("Sepal Length: " + splitline[0] + " " + "Sepal Width: " + splitline[1] + " " + "Petal Length: " + splitline[2] + " "+ "Petal Width: " + splitline[3]) 
+        print("Sepal Length: " + splitline[0] + " Sepal Width: " + splitline[1] + " Petal Length: " + splitline[2] + " Petal Width: " + splitline[3] + " Class: " + splitline[4]) 
         count = count +1
         
         
