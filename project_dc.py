@@ -26,10 +26,7 @@ with open('iris.data', 'rt') as irisdata:
         # print out details needed with the added string details to show the user the details needed
         print("Sepal Length: " + splitline[0] + " " + "Sepal Width: " + splitline[1] + " " + "Petal Length: " + splitline[2] + " "+ "Petal Width: " + splitline[3]) 
         count = count +1
-        plt.scatter(splitline[0], splitline[1], alpha=0.2,
-                   s=100*splitline[0], c=iris.target, cmap='viridis')
-       plt.xlabel(iris.feature_names[0])
-       plt.ylabel(iris.feature_names[1]);
+        
         
 # close the file       
 irisdata.close()
