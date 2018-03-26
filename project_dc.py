@@ -4,7 +4,7 @@
 
 
 # open file iris.data in read mode (for text which is the default anyway)
-from statistics import median, mode, pstdev
+from statistics import median, mode, pstdev, mean
 petalLengthList = []
 totalPetalLength = 0
 totalPetalWidth = 0
@@ -31,6 +31,9 @@ irisdata.close()
 print(count)
 # using inbuilt python function to calcluate median etc. 
 # statistics link - https://docs.python.org/3/library/statistics.html
+# I could have used mean inbuilt into the statistics module to calculate the mean
+print("Mean from stats module: " + str(mean(petalLengthList)))
+# mean calculated by using total divided by count. Unnessecary with the stats module. 
 print("Mean: " + str(totalPetalLength/count))
 print("Median: " + str(median(petalLengthList)))
 print("Mode: " + str(mode(petalLengthList)))
