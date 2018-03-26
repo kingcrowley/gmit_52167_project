@@ -5,6 +5,7 @@
 
 # open file iris.data in read mode (for text which is the default anyway)
 
+petalLengthList = []
 totalPetalLength = 0
 totalPetalWidth = 0
 totalSepalLength = 0
@@ -20,6 +21,7 @@ with open('iris.data', 'rt') as irisdata:
         # split the line and store it
         splitline = line.split(",")
         totalPetalLength += float(splitline[0])
+        petalLengthList.append(float(splitline[0]))
         # print out details needed with the added string details to show the user the details needed
         print("Petal Length: " + splitline[0] + " " + "Petal Width: " + splitline[1] + " " + "Sepal Length: " + splitline[2] + " "+ "Sepal Width: " + splitline[3]) 
         count = count +1
@@ -27,3 +29,4 @@ with open('iris.data', 'rt') as irisdata:
 irisdata.close()
 print(count)
 print(totalPetalLength/count)
+print(petalLengthList)
