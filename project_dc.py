@@ -6,7 +6,11 @@
 # open file iris.data in read mode (for text which is the default anyway)
 from statistics import median, mode, pstdev, mean
 from matplotlib import pyplot as plt
+import math
+from collections import Counter
+
 sepalLengthList = []
+sepalWidthList = []
 totalPetalLength = 0
 totalPetalWidth = 0
 totalSepalLength = 0
@@ -22,8 +26,9 @@ with open('iris.data', 'rt') as irisdata:
         # split the line and store it
         splitline = line.split(",")
         totalSepalLength += float(splitline[0])
-        # store latest petal length in the list for calculations.
+        # store latest sepal length + width in lists for calculations.
         sepalLengthList.append(float(splitline[0]))
+        sepalWidthList.append(float(splitline[1]))
         # print out details needed with the added string details to show the user the details needed
         # used for testing in this project. commented out
         # print("Sepal Length: " + splitline[0] + " Sepal Width: " + splitline[1] + " Petal Length: " + splitline[2] + " Petal Width: " + splitline[3] + " Class: " + splitline[4]) 
@@ -40,11 +45,23 @@ irisdata.close()
 print("Sepal Length - Descriptive Stats")
 print("Mean from stats module: " + str(mean(sepalLengthList)))
 # mean calculated by using total divided by count. Unnessecary with the stats module. 
-print("Mean: " + str(totalPetalLength/count))
+print("Mean: " + str(totalSepalLength/count))
 print("Median: " + str(median(sepalLengthList)))
 print("Mode: " + str(mode(sepalLengthList)))
 print("Standard Deviation: " + str(pstdev(sepalLengthList)))
 print("Max: " + str(max(sepalLengthList)))
 print("Min: " + str(min(sepalLengthList)))
+# for testing
+# print(sepalLengthList)
+#print(sepalWidthList)
+
+print("Sepal Width- Descriptive Stats")
+print("Mean from stats module: " + str(mean(sepalWidthList)))
+print("Median: " + str(median(sepalWidthList)))
+print("Mode: " + str(mode(sepalWidthList)))
+print("Standard Deviation: " + str(pstdev(sepalWidthList)))
+print("Max: " + str(max(sepalWidthList)))
+print("Min: " + str(min(sepalWidthList)))
+
 
 
