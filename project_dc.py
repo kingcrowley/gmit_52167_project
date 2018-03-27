@@ -42,6 +42,8 @@ irisdata.close()
 # using inbuilt python function to calcluate median etc. 
 # statistics link - https://docs.python.org/3/library/statistics.html
 # I could have used mean inbuilt into the statistics module to calculate the mean
+
+# TODO put this into a function for printing/testing purposes. Just pass in the specific list i need to use
 print("Sepal Length - Descriptive Stats")
 print("Mean from stats module: " + str(mean(sepalLengthList)))
 # mean calculated by using total divided by count. Unnessecary with the stats module. 
