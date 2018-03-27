@@ -65,6 +65,16 @@ print("Standard Deviation: " + str(pstdev(sepalWidthList)))
 print("Max: " + str(max(sepalWidthList)))
 print("Min: " + str(min(sepalWidthList)))
 
+
+def do_desc_stats(aList, title=""):
+    print(title + " - Descriptive Stats")
+    print("Mean from stats module: " + str(mean(aList)))
+    print("Median: " + str(median(aList)))
+    print("Mode: " + str(mode(aList)))
+    print("Standard Deviation: " + str(pstdev(aList)))
+    print("Max: " + str(max(aList)))
+    print("Min: " + str(min(aList)))
+
 # code edited from Data Science from Scratch Chapter 10
 def bucketize(point, bucket_size):
     """floor the point to the next lower multiple of bucket_size"""
@@ -82,3 +92,5 @@ def plot_histogram(points, bucket_size, title=""):
 
 plot_histogram(sepalLengthList, .2, "Sepal Length Histogram")
 plot_histogram(sepalWidthList, .2, "Sepal Width Histogram")
+do_desc_stats(sepalLengthList, "Sepal Length Testing")
+do_desc_stats(sepalWidthList, "Sepal Width Testing")
