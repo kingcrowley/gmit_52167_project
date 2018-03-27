@@ -63,5 +63,20 @@ print("Standard Deviation: " + str(pstdev(sepalWidthList)))
 print("Max: " + str(max(sepalWidthList)))
 print("Min: " + str(min(sepalWidthList)))
 
+# code edited from Data Science from Scratch Chapter 10
+def bucketize(point, bucket_size):
+    """floor the point to the next lower multiple of bucket_size"""
+    return bucket_size * math.floor(point / bucket_size)
 
+def make_histogram(points, bucket_size):
+    """buckets the points and counts how many in each bucket"""
+    return Counter(bucketize(point, bucket_size) for point in points)
 
+def plot_histogram(points, bucket_size, title=""):
+    histogram = make_histogram(points, bucket_size)
+    plt.bar(histogram.keys(), histogram.values(), width=bucket_size)
+    plt.title(title)
+    plt.show()
+
+plot_histogram(sepalLengthList, .2, "Sepal Length Histogram")
+plot_histogram(sepalWidthList, .2, "Sepal Width Histogram")
