@@ -11,6 +11,8 @@ from collections import Counter
 
 sepalLengthList = []
 sepalWidthList = []
+petalLengthList = []
+classList = []
 totalPetalLength = 0
 totalPetalWidth = 0
 totalSepalLength = 0
@@ -29,6 +31,8 @@ with open('iris.data', 'rt') as irisdata:
         # store latest sepal length + width in lists for calculations.
         sepalLengthList.append(float(splitline[0]))
         sepalWidthList.append(float(splitline[1]))
+        petalLengthList.append(float(splitline[3]))
+        classList.append(splitline[4])
         # print out details needed with the added string details to show the user the details needed
         # used for testing in this project. commented out
         # print("Sepal Length: " + splitline[0] + " Sepal Width: " + splitline[1] + " Petal Length: " + splitline[2] + " Petal Width: " + splitline[3] + " Class: " + splitline[4]) 
@@ -94,3 +98,8 @@ plot_histogram(sepalLengthList, .2, "Sepal Length Histogram")
 plot_histogram(sepalWidthList, .2, "Sepal Width Histogram")
 do_desc_stats(sepalLengthList, "Sepal Length Testing")
 do_desc_stats(sepalWidthList, "Sepal Width Testing")
+
+
+#plt.scatter(sepalLengthList, sepalWidthList,alpha=0.2, s=100*petalLengthList, c = classList, cmap='viridis')
+plt.scatter(sepalLengthList, sepalWidthList,alpha=0.2, s=100*petalLengthList)
+plt.show()
