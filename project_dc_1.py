@@ -35,3 +35,21 @@ plt.grid(False)
 plt.legend()
 plt.show()
 
+
+# https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/04.02-Simple-Scatter-Plots.ipynb
+#  explores four different dimensions of the data: 
+# the (x, y) location of each point corresponds to the sepal length and width, 
+# the size of the point is related to the petal width, 
+# and the color is related to the particular species of flower.
+#
+plt.clf()
+plt.style.use('seaborn-whitegrid') 
+
+
+plt.scatter(features[0], features[1], alpha=0.2,
+            s=100*features[3], c=iris.target, cmap='viridis')
+plt.xlabel(iris.feature_names[0])
+plt.ylabel(iris.feature_names[1]);
+plt.legend()
+plt.show()
+
