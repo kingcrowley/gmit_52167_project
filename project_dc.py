@@ -48,7 +48,7 @@ irisdata.close()
 # I could have used mean inbuilt into the statistics module to calculate the mean
 
 # TODO put this into a function for printing/testing purposes. Just pass in the specific list i need to use
-print("Sepal Length - Descriptive Stats")
+""" print("Sepal Length - Descriptive Stats")
 print("Mean from stats module: " + str(mean(sepalLengthList)))
 # mean calculated by using total divided by count. Unnessecary with the stats module. 
 print("Mean: " + str(totalSepalLength/count))
@@ -56,18 +56,18 @@ print("Median: " + str(median(sepalLengthList)))
 print("Mode: " + str(mode(sepalLengthList)))
 print("Standard Deviation: " + str(pstdev(sepalLengthList)))
 print("Max: " + str(max(sepalLengthList)))
-print("Min: " + str(min(sepalLengthList)))
+print("Min: " + str(min(sepalLengthList))) """
 # for testing
 # print(sepalLengthList)
 #print(sepalWidthList)
 
-print("Sepal Width- Descriptive Stats")
+""" print("Sepal Width- Descriptive Stats")
 print("Mean from stats module: " + str(mean(sepalWidthList)))
 print("Median: " + str(median(sepalWidthList)))
 print("Mode: " + str(mode(sepalWidthList)))
 print("Standard Deviation: " + str(pstdev(sepalWidthList)))
 print("Max: " + str(max(sepalWidthList)))
-print("Min: " + str(min(sepalWidthList)))
+print("Min: " + str(min(sepalWidthList))) """
 
 
 def do_desc_stats(aList, title=""):
