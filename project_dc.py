@@ -12,6 +12,7 @@ from collections import Counter
 sepalLengthList = []
 sepalWidthList = []
 petalLengthList = []
+setosaPetalLengthList = []
 classList = []
 totalPetalLength = 0
 totalPetalWidth = 0
@@ -31,7 +32,7 @@ with open('iris.data', 'rt') as irisdata:
         # store latest sepal length + width in lists for calculations.
         sepalLengthList.append(float(splitline[0]))
         sepalWidthList.append(float(splitline[1]))
-        petalLengthList.append(float(splitline[3]))
+        petalLengthList.append(float(splitline[2]))
         classList.append(splitline[4])
         # print out details needed with the added string details to show the user the details needed
         # used for testing in this project. commented out
