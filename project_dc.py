@@ -98,7 +98,7 @@ plot_histogram(sepalLengthList, .2, "Sepal Length Histogram")
 plot_histogram(sepalWidthList, .2, "Sepal Width Histogram")
 do_desc_stats(sepalLengthList, "Sepal Length Testing")
 do_desc_stats(sepalWidthList, "Sepal Width Testing")
-
+do_desc_stats(petalLengthList, "Petal Length Testing")
 
 #plt.scatter(sepalLengthList, sepalWidthList,alpha=0.2, s=100*petalLengthList, c = classList, cmap='viridis')
 plt.scatter(sepalLengthList, sepalWidthList,alpha=0.2, s=100*petalLengthList)
