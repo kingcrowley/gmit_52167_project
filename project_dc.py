@@ -15,6 +15,7 @@ sepalWidthList = []
 setosaSepalWidthList = []
 petalLengthList = []
 setosaPetalLengthList = []
+petalWidthList = []
 classList = []
 totalPetalLength = 0
 totalPetalWidth = 0
@@ -35,6 +36,7 @@ with open('iris.data', 'rt') as irisdata:
         sepalLengthList.append(float(splitline[0]))
         sepalWidthList.append(float(splitline[1]))
         petalLengthList.append(float(splitline[2]))
+        petalWidthList.append(float(splitline[3]))
         classList.append(splitline[4])
         
         if splitline[4].strip()=="Iris-setosa":
@@ -87,6 +89,7 @@ def do_desc_stats(aList, title=""):
     print("Standard Deviation: " + str(pstdev(aList)))
     print("Max: " + str(max(aList)))
     print("Min: " + str(min(aList)))
+    print("******************")
 
 # code edited from Data Science from Scratch Chapter 10
 def bucketize(point, bucket_size):
@@ -108,6 +111,7 @@ plot_histogram(sepalWidthList, .2, "Sepal Width Histogram")
 do_desc_stats(sepalLengthList, "Sepal Length")
 do_desc_stats(sepalWidthList, "Sepal Width")
 do_desc_stats(petalLengthList, "Petal Length")
+do_desc_stats(petalWidthList, "Petal Width")
 
 #plt.scatter(sepalLengthList, sepalWidthList,alpha=0.2, s=100*petalLengthList, c = classList, cmap='viridis')
 plt.scatter(sepalLengthList, sepalWidthList,alpha=0.2, s=100*petalLengthList)
