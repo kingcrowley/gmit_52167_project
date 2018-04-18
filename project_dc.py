@@ -10,7 +10,9 @@ import math
 from collections import Counter
 
 sepalLengthList = []
+setosaSepalLengthList = []
 sepalWidthList = []
+setosaSepalWidthList = []
 petalLengthList = []
 setosaPetalLengthList = []
 classList = []
@@ -34,6 +36,12 @@ with open('iris.data', 'rt') as irisdata:
         sepalWidthList.append(float(splitline[1]))
         petalLengthList.append(float(splitline[2]))
         classList.append(splitline[4])
+        
+        if splitline[4].strip()=="Iris-setosa":
+            setosaSepalLengthList.append(float(splitline[0]))
+            setosaSepalWidthList.append(float(splitline[1]))
+            setosaPetalLengthList.append(float(splitline[3]))
+
         # print out details needed with the added string details to show the user the details needed
         # used for testing in this project. commented out
         # print("Sepal Length: " + splitline[0] + " Sepal Width: " + splitline[1] + " Petal Length: " + splitline[2] + " Petal Width: " + splitline[3] + " Class: " + splitline[4]) 
