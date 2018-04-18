@@ -16,11 +16,12 @@ setosaSepalWidthList = []
 petalLengthList = []
 setosaPetalLengthList = []
 petalWidthList = []
+setosaPetalWidthList = []
 classList = []
-totalPetalLength = 0
-totalPetalWidth = 0
+#totalPetalLength = 0
+#totalPetalWidth = 0
 totalSepalLength = 0
-totalSepalWidth = 0
+#totalSepalWidth = 0
 
 # to count the number of lines in the dataset
 count = 0
@@ -31,6 +32,7 @@ with open('iris.data', 'rt') as irisdata:
         # print(line)
         # split the line and store it
         splitline = line.split(",")
+        print(splitline[0])
         totalSepalLength += float(splitline[0])
         # store latest sepal length + width in lists for calculations.
         sepalLengthList.append(float(splitline[0]))
@@ -42,7 +44,8 @@ with open('iris.data', 'rt') as irisdata:
         if splitline[4].strip()=="Iris-setosa":
             setosaSepalLengthList.append(float(splitline[0]))
             setosaSepalWidthList.append(float(splitline[1]))
-            setosaPetalLengthList.append(float(splitline[3]))
+            setosaPetalLengthList.append(float(splitline[2]))
+            setosaPetalWidthList.append(float(splitline[3]))
 
         # print out details needed with the added string details to show the user the details needed
         # used for testing in this project. commented out
@@ -85,7 +88,8 @@ def do_desc_stats(aList, title=""):
     print(title + " - Descriptive Stats")
     print("Mean from stats module: " + str(mean(aList)))
     print("Median: " + str(median(aList)))
-    print("Mode: " + str(mode(aList)))
+    if(title !="Setosa Sepal Length"):
+        print("Mode: " + str(mode(aList)))
     print("Standard Deviation: " + str(pstdev(aList)))
     print("Max: " + str(max(aList)))
     print("Min: " + str(min(aList)))
@@ -112,6 +116,12 @@ def plot_histogram(points, bucket_size, title=""):
 #do_desc_stats(sepalWidthList, "Sepal Width")
 #do_desc_stats(petalLengthList, "Petal Length")
 #do_desc_stats(petalWidthList, "Petal Width")
+
+do_desc_stats(setosaSepalLengthList, "Setosa Sepal Length")
+do_desc_stats(setosaSepalWidthList, "Setosa Sepal Width")
+do_desc_stats(setosaPetalLengthList, "Setosa Petal Length")
+do_desc_stats(setosaPetalWidthList, "Setosa Petal Width")
+
 
 
 
