@@ -11,12 +11,20 @@ from collections import Counter
 
 sepalLengthList = []
 setosaSepalLengthList = []
+versicolorSepalLengthList = []
+virginicaSepalLengthList = []
 sepalWidthList = []
 setosaSepalWidthList = []
+versicolorSepalWidthList = []
+virginicaSepalWidthList = []
 petalLengthList = []
 setosaPetalLengthList = []
+versicolorPetalLengthList = []
+virginicaPetalLengthList = []
 petalWidthList = []
 setosaPetalWidthList = []
+versicolorPetalWidthList = []
+virginicaPetalWidthList = []
 classList = []
 #totalPetalLength = 0
 #totalPetalWidth = 0
@@ -46,6 +54,17 @@ with open('iris.data', 'rt') as irisdata:
             setosaSepalWidthList.append(float(splitline[1]))
             setosaPetalLengthList.append(float(splitline[2]))
             setosaPetalWidthList.append(float(splitline[3]))
+        elif splitline[4].strip()=="Iris-versicolor":
+            versicolorSepalLengthList.append(float(splitline[0]))
+            versicolorSepalWidthList.append(float(splitline[1]))
+            versicolorPetalLengthList.append(float(splitline[2]))
+            versicolorPetalWidthList.append(float(splitline[3]))
+        elif splitline[4].strip()=="Iris-virginica":
+            virginicaSepalLengthList.append(float(splitline[0]))
+            virginicaSepalWidthList.append(float(splitline[1]))
+            virginicaPetalLengthList.append(float(splitline[2]))
+            virginicaPetalWidthList.append(float(splitline[3]))
+
 
         # print out details needed with the added string details to show the user the details needed
         # used for testing in this project. commented out
@@ -88,8 +107,11 @@ def do_desc_stats(aList, title=""):
     print(title + " - Descriptive Stats")
     print("Mean from stats module: " + str(mean(aList)))
     print("Median: " + str(median(aList)))
-    if(title !="Setosa Sepal Length"):
+    if not (title =="Setosa Sepal Length" or title =="Versicolor Sepal Length"):
         print("Mode: " + str(mode(aList)))
+    #if(title !="Setosa Sepal Length"):
+    #    print("Mode: " + str(mode(aList)))
+    
     print("Standard Deviation: " + str(pstdev(aList)))
     print("Max: " + str(max(aList)))
     print("Min: " + str(min(aList)))
@@ -112,15 +134,21 @@ def plot_histogram(points, bucket_size, title=""):
 
 #plot_histogram(sepalLengthList, .2, "Sepal Length Histogram")
 #plot_histogram(sepalWidthList, .2, "Sepal Width Histogram")
-#do_desc_stats(sepalLengthList, "Sepal Length")
+do_desc_stats(sepalLengthList, "Sepal Length")
 #do_desc_stats(sepalWidthList, "Sepal Width")
 #do_desc_stats(petalLengthList, "Petal Length")
 #do_desc_stats(petalWidthList, "Petal Width")
 
 do_desc_stats(setosaSepalLengthList, "Setosa Sepal Length")
-do_desc_stats(setosaSepalWidthList, "Setosa Sepal Width")
-do_desc_stats(setosaPetalLengthList, "Setosa Petal Length")
-do_desc_stats(setosaPetalWidthList, "Setosa Petal Width")
+do_desc_stats(versicolorSepalLengthList, "Versicolor Sepal Length")
+do_desc_stats(virginicaSepalLengthList, "Virgincia Sepal Length")
+
+
+#do_desc_stats(setosaSepalWidthList, "Setosa Sepal Width")
+#do_desc_stats(setosaPetalLengthList, "Setosa Petal Length")
+#do_desc_stats(setosaPetalWidthList, "Setosa Petal Width")
+
+
 
 
 

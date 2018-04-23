@@ -53,3 +53,30 @@ plt.ylabel(iris.feature_names[1]);
 plt.legend()
 plt.show()
 
+# trying sepal
+
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
+df['Target'] = pd.DataFrame(iris.target)
+df.head()
+plt.clf()
+plt.figure(figsize = (10, 6))
+names = iris .target_names
+label = (iris.target).astype(np.int)
+colors = ['b','r','g']
+plt.title('Sepal Width vs Sepal Length')
+plt.xlabel(iris.feature_names[0])
+plt.ylabel(iris.feature_names[1])
+for i in range(len(names)):
+    bucket = df[df['Target'] == i]
+    bucket = bucket.iloc[:,[0,1]].values
+    hull = ConvexHull(bucket)
+    plt.scatter(bucket[:, 0], bucket[:, 1], label=names[i]) 
+    for j in hull.simplices:
+        plt.plot(bucket[j,0], bucket[j,1], colors[i])
+plt.grid(False)
+plt.legend()
+plt.show()
+
+
+
+
