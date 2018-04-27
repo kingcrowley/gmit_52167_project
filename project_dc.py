@@ -40,7 +40,7 @@ with open('iris.data', 'rt') as irisdata:
         # print(line)
         # split the line and store it
         splitline = line.split(",")
-        print(splitline[0])
+        #print(splitline[0])
         totalSepalLength += float(splitline[0])
         # store latest sepal length + width in lists for calculations.
         sepalLengthList.append(float(splitline[0]))
@@ -134,19 +134,34 @@ def plot_histogram(points, bucket_size, title=""):
 
 #plot_histogram(sepalLengthList, .2, "Sepal Length Histogram")
 #plot_histogram(sepalWidthList, .2, "Sepal Width Histogram")
-do_desc_stats(sepalLengthList, "Sepal Length")
-#do_desc_stats(sepalWidthList, "Sepal Width")
-#do_desc_stats(petalLengthList, "Petal Length")
+# do_desc_stats(sepalLengthList, "Sepal Length")
+# do_desc_stats(sepalWidthList, "Sepal Width")
+do_desc_stats(petalLengthList, "Petal Length")
 #do_desc_stats(petalWidthList, "Petal Width")
 
-do_desc_stats(setosaSepalLengthList, "Setosa Sepal Length")
-do_desc_stats(versicolorSepalLengthList, "Versicolor Sepal Length")
-do_desc_stats(virginicaSepalLengthList, "Virgincia Sepal Length")
 
+# collection of calls to function to get sepal length for the three classes individually
+#do_desc_stats(setosaSepalLengthList, "Setosa Sepal Length")
+#do_desc_stats(versicolorSepalLengthList, "Versicolor Sepal Length")
+#do_desc_stats(virginicaSepalLengthList, "Virgincia Sepal Length")
 
-#do_desc_stats(setosaSepalWidthList, "Setosa Sepal Width")
+# collection of calls to function to get sepal width for the three classes individually
+# do_desc_stats(setosaSepalWidthList, "Setosa Sepal Width")
+# do_desc_stats(versicolorSepalWidthList, "Versicolor Sepal Width")
+# do_desc_stats(virginicaSepalWidthList, "Virginica Sepal Width")
+
 #do_desc_stats(setosaPetalLengthList, "Setosa Petal Length")
 #do_desc_stats(setosaPetalWidthList, "Setosa Petal Width")
+
+# collection of calls to function to get petal width for the three classes individually
+# do_desc_stats(setosaPetalWidthList, "Setosa Petal Width")
+# do_desc_stats(versicolorPetalWidthList, "Versicolor Petal Width")
+# do_desc_stats(virginicaPetalWidthList, "Virginica Petal Width")
+
+# collection of calls to function to get petal length for the three classes individually
+do_desc_stats(setosaPetalLengthList, "Setosa Petal Length")
+do_desc_stats(versicolorPetalLengthList, "Versicolor Petal Length")
+do_desc_stats(virginicaPetalLengthList, "Virginica Petal Length")
 
 
 
