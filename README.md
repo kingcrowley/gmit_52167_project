@@ -8,3 +8,5 @@ project_dc_1 aims to be a more data scienc-y approach using a python dataframe a
 
 
 Added in iris_data_set_investigation pdf as report.
+
+Added in images used in report
